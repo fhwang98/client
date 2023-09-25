@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+
+		@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+
+		@font-face {
+		font-family: 'KNPSKkomi-Regular00';
+		src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/KNPSKkomi-Regular00.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		}
+
+		.txt {
+			/* background-color: yellow; */
+
+			/* 텍스트 색상, 전경색(Fore Color) */
+			/* color: red; */
+
+			 color: #444444; /* #333333 ~ #555555 */
+
+			 /* 텍스트 정렬(수평 정렬) */
+			 text-align: left;
+
+			/* 텍스트 크기 */
+			/* 기본값 */
+			/* font-size: 12pt; */
+			/* font-size: 16px; */
+
+			/* font-size: 1pt; */
+
+			/* font-size: 2rem; */
+
+			/* 
+				
+				HTML 수치 표현법
+				1. 숫자(px, 문자수, 셀병합 크기)
+				2. 백분율(%)
+
+				CSS 수치 표현법
+				- 수치 데이터는 반드시(***) 단위 표기를 해야한다. (생략 불가능 > 동작 안함)
+				1. pt: 포인트(글꼴), 절대값, 1/72인치
+				2. px: 픽셀(모든 분야, 크기, 여백, 위치, 글꼴 등), 절대값
+				3. em: 기본 글꼴 크기를 기준으로 하는 상대 크기(%).
+					   알파벳 대문자 M의 높이를 100%으로 하는 상대 크기. 상대값.
+					   상속 받음. 부모 글꼴 크기를 100%로 하는 상대 크기.
+				4. rem: 기본 글꼴 크기를 기준으로 하는 상대 크기(%).
+					   알파벳 대문자 M의 높이를 100%으로 하는 상대 크기. 상대값.
+					   상속 안받음. 부모와 상관 없이 브라우저의 기본 글꼴 크기를 100%로 하는 상대 크기
+				10. %: 백분율(크기, 여백, 위치, 정렬 등 ..). 상대값. 부모의 크기를 기준으로 하는 상대값.
+				-----------------------------------------------------
+				5. ex: 알파벳 소문자 x의 높이를 100%으로 하는 상대 크기
+				6. mm: 밀리미터
+				7. cm: 센티미터
+				8. in: 인치
+				9. pc: 파이카(1pc = 12pt) 절대값.
+				11. 기타등등..
+			*/
+
+			/* 
+				줄간격
+				- line-height
+				- %, em(rem), px
+				- 1.4rem ~ 1.8rem
+			*/
+			line-height: 1.4rem;
+
+			/* 스타일(normal, italic) */
+			font-style: normal;
+
+			/* 두께(normal, bold) */
+			font-weight: normal;
+
+			/* 단어 간격(스페이스 크기) */
+			word-spacing: 0;
+
+			/* 자간(문자 간격) */
+			letter-spacing: 0px;
+
+			/* 꾸밈 */
+			text-decoration: none;
+
+			/* 폰트(서체, 글꼴) */
+			/* 
+				폰트
+				- 페이지 폰트는 서버측 폰트를 사용하는 것이 아니라,
+				  브라우저가 동작 중인 클라이언트 컴퓨터의 폰트를 사용한다. (***)
+
+				폰트 예약어
+				폰트의 종류를나타내는 용어
+				1. sefif : 획끝에 장식이 있는 폰트(궁서체, 바탕체)
+				2. san-sefif : 획끝에 장식이 없는 폰트(돋움체, 고딕체)
+				3. monospace : 문자폭이 균일(궁서(x), 궁서체(o))
+				4. cursice : 장식체
+				5. fantady : 장식체
+
+				웹 폰트
+				- 폰트를 서버로부터 다운로드 받아서 사용하는 기술
+				- 서핑중인 페이지에만 적용
+				- 서비스 업체
+
+			*/
+			/* 나열 > 글꼴 설정 우선순위 */
+			/* 이름에 공백이 있거나 한글일 경우 묶어주는게 좋음 */
+			/* font-family: '맑은 고딕', '궁서체', '바탕체', monospace; */
+			font-family: '맑은 고딕'; 
+
+		}
+
+		p {
+			/* 들여쓰기 */
+			text-indent: 1rem;
+		}
+
+		.txt span {
+
+			background-color: yellow;
+			/* font-size: 16px; */
+			/* font-size: 2em; */
+			/* font-size: 2rem; */
+
+		}
+
+	</style>
+</head>
+<body>
+	<!-- ex14_text.html -->
+	<h1>텍스트 관련 속성</h1>
+
+	<p>모든 국민은 법률이 정하는 바에 의하여 선거권을 가진다. 공개하지 아니한 회의내용의 공표에 관하여는 법률이 정하는 바에 의한다. 국회는 국민의 보통·평등·직접·비밀선거에 의하여 선출된 국회의원으로 구성한다. 제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국가의 세입·세출의 결산, 국가 및 법률이 정한 단체의 회계검사와 행정기관 및 공무원의 직무에 관한 감찰을 하기 위하여 대통령 소속하에 감사원을 둔다. 대통령이 궐위되거나 사고로 인하여 직무를 수행할 수 없을 때에는 국무총리, 법률이 정한 국무위원의 순서로 그 권한을 대행한다. 국가안전보장회의는 대통령이 주재한다.</p>
+
+	<p class="txt">모든 국민은 직업선택의 자유를 가진다. 국가는 여자의 복지와 권익의 향상을 위하여 노력하여야 한다. 재산권의 행사는 공공복리에 적합하도록 하여야 한다. 국회는 헌법개정안이 공고된 날로부터 60일 이내에 의결하여야 하며, 국회의 의결은 재적의원 3분의 2 이상의 찬성을 얻어야 한다. <span>국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다.</span> 정당의 설립은 자유이며, 복수정당제는 보장된다. 국무총리는 국회의 동의를 얻어 대통령이 임명한다. 신체장애자 및 질병·노령 기타의 사유로 생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다. 선거에 있어서 최고득표자가 2인 이상인 때에는 국회의 재적의원 과반수가 출석한 공개회의에서 다수표를 얻은 자를 당선자로 한다.</p>
+
+	<p>국교는 인정되지 아니하며, 종교와 정치는 분리된다. 제1항의 탄핵소추는 국회재적의원 3분의 1 이상의 발의가 있어야 하며, 그 의결은 국회재적의원 과반수의 찬성이 있어야 한다. 다만, 대통령에 대한 탄핵소추는 국회재적의원 과반수의 발의와 국회재적의원 3분의 2 이상의 찬성이 있어야 한다. 헌법재판소는 법률에 저촉되지 아니하는 범위안에서 심판에 관한 절차, 내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 모든 국민은 양심의 자유를 가진다. 정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다.</p>
+
+	<hr>
+
+	<!-- (p>lorem100)*3 -->
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi tempore dolor obcaecati labore unde, vero natus reiciendis nesciunt nostrum veritatis officiis eligendi velit repellendus error tenetur placeat corporis iusto debitis? Illum distinctio quisquam error omnis facilis laudantium possimus voluptatum modi laboriosam dicta inventore, vero qui necessitatibus natus? Voluptas soluta ipsa earum reprehenderit ex! Ducimus at optio architecto animi doloribus non ipsa accusantium voluptatibus, nemo magni laborum similique. Voluptatem doloribus quas qui eveniet consectetur, reiciendis ea dolores quam eaque officia! Harum tenetur eaque repellendus nihil! Veritatis suscipit assumenda exercitationem omnis ab quo dolorem. Deserunt libero in, totam odit eos accusamus et!</p>
+
+	<p class="txt">Aut minima debitis sequi distinctio dolorum quisquam, dolor culpa earum enim aspernatur dolores voluptas id voluptatum sapiente facilis at possimus quo! Soluta excepturi odio eum nulla officia, nisi porro unde ratione adipisci temporibus provident repudiandae, non facere magnam eius suscipit dicta earum ullam incidunt maiores repellat, atque illo! Numquam, reprehenderit ratione? Tenetur alias sint doloribus fugit atque placeat qui quo pariatur! Facere id assumenda aspernatur veritatis dolorum delectus quia minus. Saepe deserunt, illum itaque sunt earum voluptates numquam, nulla, autem iure aut iste placeat a quibusdam. Rem, placeat? Quos tempora explicabo nesciunt illo, dignissimos delectus corrupti! Enim nam quibusdam corporis!</p>
+
+	<p>Accusamus delectus dolorum maxime quae adipisci harum, dolor porro. Eum a, inventore nam, quidem quisquam vitae harum mollitia atque ab ratione nulla explicabo asperiores hic ea facilis est illum dolor commodi? Culpa ratione delectus, quibusdam non consectetur vel aliquid tempore! Distinctio iste minima neque alias odio, labore laudantium! Aut maiores voluptatum, ipsam reprehenderit tenetur minus fugiat eius beatae saepe provident ad eos dicta. Labore, delectus. Deleniti ducimus nulla animi ipsa repellat, voluptatibus voluptates eos. Debitis obcaecati dignissimos consequuntur neque reprehenderit dolores impedit eveniet nemo, eligendi a ex cupiditate at voluptatum beatae modi illo nesciunt? Incidunt omnis ducimus officiis nesciunt nobis.</p>
+
+
+
+</body>
+</html>
