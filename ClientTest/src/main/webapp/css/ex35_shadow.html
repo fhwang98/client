@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		/*
+			그림자, shadow
+			1. text-shadow : x y blur color
+			2. box-shadow : x y blur color
+		*/
+
+		.box {margin: 20px;}
+
+		#box1 {
+			text-shadow: 2px 2px 3px #999;
+		}
+
+		#box2 {
+			box-shadow: 2px 2px 3px #999;
+		}
+
+		#box3 {
+			box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- ex35_shadow.html -->
+
+	<div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+
+</body>
+</html>
