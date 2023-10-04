@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+
+		/* html {
+			border: 10px solid violet;
+			height: 100%;
+		}
+		body {
+			border: 10px solid blue;
+			height: 100%;
+		} */
+
+
+		/* 전체 레이아웃 > main */
+		main {
+			display: grid;
+			/* 3행 2열 */
+			grid-template-rows: 50px 200px auto ;
+			grid-template-columns: 200px minmax(800px, 1fr) ;
+			/* viewport > 브라우저 창을 의미 */
+			height: 100vh; /* viewport-height */
+		}
+
+		#menu {
+			background-color: orange;
+			grid-row: 1/4;
+			text-align: center;
+		}
+
+		#menu > h1 {
+			color: white;
+		}
+
+		#menu > hr {
+			border: 0;
+			border-bottom: 1px dashed white;
+		}
+
+		#menu > ul {
+			padding: 0;
+			color: white;
+		}
+
+		#menu > div {
+			color: white;
+			font-size: 14px;
+			padding: 20px;
+		}
+
+		#search {
+			background-color: gold;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#search input[type=text] {
+			border: 1px solid yellow;
+			width: 430px;
+			padding: 5px;
+			outline: none;
+		}
+		
+		#search button {
+			border: 1px solid yellow;
+			width: 100px;
+			height: 27.5px;
+			background-color: yellow;
+		}
+
+		#banner {
+			background-color: green;
+		}
+
+		#banner > img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+
+		#list {
+			background-color: cornflowerblue;
+			display: grid;
+			grid-template-rows: repeat(2, 1fr);
+			grid-template-columns: repeat(4, 1fr);
+			gap: 20px;
+			padding: 20px;
+		}
+
+		#list > div {
+			background-color: yellowgreen;
+		}
+
+		#list > div > img {
+			display: block;
+			margin: 20px auto;
+			border: 3px solid white;
+			padding: 3px;
+		}
+
+		#list > div > div {
+			margin: 30px;
+			font-size: 14px;
+			color: #555;
+		}
+
+		/*
+			반응형 웹 > 복잡함
+			모바일 페이지를 따로 만드는게 낫다
+		*/
+		/* 스마트폰 ~ 태블릿 세로 */
+		@media screen and (max-width: 768px) {
+			/* * { font-family: Impact; } */
+
+			main {
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: 210px 50px 200px auto;
+				height: 100vh;
+			}
+
+			#menu {
+				grid-row: auto;
+			}
+
+			#menu ul {
+				display: flex;
+				justify-content: center;
+				margin: 0;
+			}
+
+			#menu li {
+				list-style-type: none;
+				margin: 0px 7px;
+			}
+
+			#menu hr {
+				display: none;
+			}
+
+			#list {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<!-- ex52_grid.html -->
+	<main>
+		<div id="menu">
+			<h1>Study</h1>
+
+			<ul>
+				<li>Java</li>
+				<li>Oracle</li>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JavaScript</li>
+			</ul>
+
+			<hr>
+
+			<ul>
+				<li>Class</li>
+				<li>Method</li>
+				<li>Interface</li>
+				<li>Property</li>
+				<li>Attribute</li>
+			</ul>
+
+			<hr>
+			<div>
+				&copy;Copyright test.com<br>
+				All rights reserved.
+			</div>
+
+		</div>
+
+		<div id="search">
+			<input type="text">
+			<button>Search</button>
+		</div>
+
+		<div id="banner">
+			<img src="../asset/images/gimbal.jpg" alt="">
+		</div>
+
+		<div id="list">
+			<!-- (div>(img[src=../asset/images/rect_icon$$.png]+(div>lorem)))*6 -->
+			<div>
+				<img src="../asset/images/rect_icon01.png" alt="">
+				<div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error magnam voluptas iure asperiores omnis facere, voluptatem nemo voluptatibus pariatur, labore et aliquid commodi illum ea perspiciatis, in laboriosam eius minima!</div>
+			</div>
+			<div>
+				<img src="../asset/images/rect_icon02.png" alt="">
+				<div>Omnis delectus enim ipsa ratione facere beatae nesciunt deserunt, impedit corrupti assumenda distinctio, illum saepe iure neque sunt placeat amet provident harum. Delectus minima excepturi praesentium, optio doloribus totam necessitatibus!</div>
+			</div>
+			<div>
+				<img src="../asset/images/rect_icon03.png" alt="">
+				<div>Voluptate vero modi quaerat blanditiis autem debitis molestias voluptatibus dolore reiciendis perspiciatis suscipit unde distinctio impedit tenetur, ratione, animi magnam accusantium quia dolores similique facilis culpa ex non! Laborum, repellat.</div>
+			</div>
+			<div>
+				<img src="../asset/images/rect_icon04.png" alt="">
+				<div>Ad, nulla, perspiciatis, harum autem alias aliquam vel libero delectus hic sunt aliquid magni aut quidem quod doloribus. Quibusdam nihil maxime ipsa, aspernatur officiis blanditiis quisquam nostrum rem fuga nulla.</div>
+			</div>
+			<div>
+				<img src="../asset/images/rect_icon05.png" alt="">
+				<div>Doloribus, ea nihil beatae dolore natus explicabo sequi quam excepturi dolorem ad? Officia, alias est! Deleniti necessitatibus excepturi impedit, doloribus repudiandae, blanditiis provident magni, maiores est enim molestiae nobis tenetur.</div>
+			</div>
+			<div>
+				<img src="../asset/images/rect_icon06.png" alt="">
+				<div>Rem autem cupiditate commodi libero, ea officia optio consequuntur facilis sunt vero ipsam, impedit a omnis numquam magnam facere cumque! Qui aliquid vel nihil accusamus ratione, voluptatem vero nesciunt adipisci?</div>
+			</div>
+		</div>
+
+
+	</main>
+</body>
+</html>
