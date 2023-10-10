@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Q02key</title>
+	<style>
+		body {
+			text-align: center;
+		}
+		input[type=text] {
+			outline: none;
+		}
+		input[type=text]:last-child {
+			border: 0;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<h1>회원가입</h1>
+		<div>
+			아이디 : <input type="text" name="txtid">
+			<input type="text" name="txtmessage">
+		</div>
+	</form>
+	<script>
+		/* 아이디 유효성 검사를 하시오.
+			길이 > 4~12자 이내
+			onkeyup */
+		document.forms[0].txtid.onkeyup = validate;
+
+		function validate() {
+			var len = event.target.value.length;
+			var message;
+
+			if (len < 4) {
+				message = '아이디가 너무 짧습니다.';
+			} else if (len > 12) {
+				message = '아이디가 너무 깁니다.';
+			} else {
+				message = '아이디가 적합합니다.';
+			}
+			
+			document.forms[0].txtmessage.value = message;
+		}
+
+	</script>
+</body>
+</html>

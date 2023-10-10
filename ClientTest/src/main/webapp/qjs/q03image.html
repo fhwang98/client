@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Q03_image</title>
+</head>
+<body>
+	<!-- 
+		마우스를 올리면 고양이 크기를 키우시오.
+		고양이를 클릭하면 크기를 원래대로 줄이시오.
+		숫자(1~5)를 누르면 고양이 크기를 키우시오.
+		esc 키를 누르면 크기를 원래대로 줄이시오.
+	 -->
+	<h1>고양이</h1>
+	<img src="../asset/images/catty01.png">
+	<img src="../asset/images/catty02.png">
+	<img src="../asset/images/catty03.png">
+	<img src="../asset/images/catty04.png">
+	<img src="../asset/images/catty05.png">
+
+	<script>
+		window.onkeydown = key;
+		function key() {
+			if (event.keyCode == 27) {		
+				for (var i = 0; i < document.images.length; i++) {
+					document.images[i].width = 128;
+				}	
+			}
+			if (event.keyCode > 48 && event.keyCode <= 54) {
+				document.images[event.keyCode - 49].width = document.images[event.keyCode - 49].width + 5;
+			}
+		}
+
+		for (var i = 0; i < document.images.length; i++) {
+			document.images[i].onclick = reset;
+			document.images[i].onmouseover = expand;
+		}
+		function reset() {
+			event.target.width = 128;
+		}
+		function expand() {
+			event.target.width = event.target.width + 5;
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Q13_timer</title>
+	<style>
+		#txt {
+			border: 0px;
+			font-size: 150px;
+			font-weight: bold;
+			color: #333;
+			display: block;
+			text-align: center;
+			width: 200px;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="txt">
+	<script>
+		var n = 10;
+		var timer = setInterval(countdown, 1000);
+		function countdown() {
+			document.getElementById('txt').value = n;
+			n--;
+			if (n < 0) {
+				window.location.href = 'https://google.com';
+			}
+		}
+		document.onkeydown = m1;
+		function m1() {
+			if (event.keyCode == 27) {
+				clearInterval(timer);
+				document.body.bgColor = 'tomato';
+			}
+		}
+	</script>
+</body>
+</html>

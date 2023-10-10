@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Q01_click</title>
+	<style>
+
+		body {
+			color: #777;
+		}
+
+		input[type=text] {
+			outline: none;
+		}
+
+		form > div {
+			margin-bottom: 15px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<h1>데이터 입력</h1>
+	<form>
+		<div>이름 : <input type="text" name="txt"></div>
+		<div>나이 : <input type="text" name="txt"></div>
+		<div>별명 : <input type="text" name="txt"></div>
+		<div>
+			<input type="button" value="Long" name="blong">
+			<input type="button" value="Short" name="bshort">
+		</div>
+	</form>
+
+	<script>
+		document.forms[0].blong.onclick = resize;
+		document.forms[0].bshort.onclick = resize;
+
+		function resize() {
+			
+			var len;
+			if (event.target.name == 'blong') {
+				len = 50;
+			} else {
+				len = 20;
+			}
+
+			for (var i = 0; i < document.forms[0].txt.length; i++) {
+				document.forms[0].txt[i].size = len;
+			}
+		}
+
+	</script>
+</body>
+</html>
