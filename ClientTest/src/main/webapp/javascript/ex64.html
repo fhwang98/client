@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<!-- ex64.html -->
+
+	<script>
+		//객체
+		const o1 = new Object();
+		const o2 = {};
+
+		// 동일한 성격의 두 객체
+		o1.name = '홍길동';
+		o1.hello = function() {
+			console.log('hello');
+		}
+
+		o2.name = '아무개';
+		o2.helle = function() {  // 오타가 생길 수도 있다.
+			console.log('안녕');
+		}
+
+		// 생성자 함수
+		//- 자바의 생성자와 유사
+		/* 
+		Java
+		class User {
+			private String name;
+			private int age;
+
+			public User(String name, int age) {
+				this.name = name;
+				this.age = age;
+			}
+		}
+		*/
+
+		// 생성자 함수
+		//- 함수명을 파스칼 표기법으로 작성한다.
+		function User(name, age) {
+			this.name = name;
+			this.age = age;
+		}
+
+		//*** 생성자 함수는 절대로!! 일반 함수처럼 그냥 호출하면 안된다.
+		// User('홍길동', 20); > this = window
+
+		//var로 선언한 전역 변수 > window의 프로퍼티
+		// var color = 'gold';
+
+
+		// ****** 생성자 함수는 반드시 new 연산자와 같이 사용해야 한다.
+		//- new : 객체 생성 연산자
+		const o3 = new User('홍길동', 20);
+
+		console.log(o3.name);
+		console.log(o3.age);
+		
+		const o4 = new User('하하하', 25);
+		
+		console.log(o4.name);
+		console.log(o4.age);
+
+		//new > {}
+		const now = new Date();
+		const list = new Array(); // 배열(X) > 객체(O)
+
+		list[0] = 10; // 0 > index(X), 프로퍼티(O)
+		list[30] = 30; // 2 > index(X), 프로퍼티(O)
+
+		console.log(list[1]);
+
+		const hong = {};
+		console.log(hong.name);
+
+		// console.log(height);
+
+		const arr = {
+			0: '사과',
+			1: '귤',
+			2: '바나나',
+			length: 3
+		}
+
+		console.log(arr[0]); //arr.0 대신 > arr[0] 표기법 > 유사배열
+		console.log(arr[1]);
+		console.log(arr[3]);
+		console.log(arr.length);
+
+
+		const desk = {};
+		const today = new Date();
+		const list2 = new Array();
+
+		console.log(typeof desk); // object
+		console.log(typeof today); // object
+		console.log(typeof list2); // object
+
+		//object > 구체적으로 확인 > 생성자 함수명
+		console.log(today.constructor.name); // Date
+		console.log(list2.constructor.name); // Array
+
+
+		const list3 = new Array();
+
+		list3[0] = '강아지';
+		list3[1] = '고양이';
+		list3.address = '서울시 강남구';
+		list3.check = function() {
+			alert('하하하');
+		};
+
+		console.log(list3);
+
+
+		const o5 = {
+			name: '홍길동',
+			age: 20,
+			info: function() {
+				// console.log(name, age); // name / age is not defined
+				console.log(this.name, this.age);
+			}
+		};
+
+		o5.info();
+
+		const o6 = {
+			name: '호호호',
+			age: 27,
+			info: m1
+		};
+
+		function m1() {
+			console.log(this.name, this.age);
+			// this 누구? > o6 > 절대가 아님 ;;
+			// 자바스크립트의 this > 상황에 따라 의미 상이함;;;
+		}
+
+		o6.info();
+
+		m1(); // this > window
+		// 모든 전역함수는 window의 프로퍼티가 됨 > window.m1
+		window.m1();
+
+		// 해당 함수를 호출한 객체가 this가 됨
+
+
+	</script>
+</body>
+</html>
