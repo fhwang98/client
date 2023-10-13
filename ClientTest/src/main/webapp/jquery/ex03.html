@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<!-- ex03.html -->
+	<h1>jQuery Event</h1>
+	<input type="button" value="버튼1" id="btn1" class="btn">
+	<input type="button" value="버튼2" id="btn2" class="btn">
+	<input type="button" value="버튼3" id="btn3" class="btn">
+
+	<script src="../asset/js/jquery-1.12.4.js"></script>
+	<script>
+
+		//1. BOM
+		//- <input onclick="">
+		//- btn.onclick = functoin() {}
+
+		//2. DOM
+		//- btn.addEventListner('click', function() {});
+
+		//3. jQuery
+		//- 이벤트 함수
+
+		function m1() {}
+		const m2 = m1;
+		m2();
+
+		// jQuery('#btn1').css('color', 'blue');
+		// $('#btn2').css('color', 'orange'); // 별칭
+
+		/*
+			jQuerry 이벤트 함수
+			1. 전용 이벤트 함수
+				- 객체.이벤트함수(콜백함수)
+
+			2. 범용 이벤트 함수
+				- 객체.on(이벤트명, 콜백함수)
+
+		*/
+
+		/* 
+		$('#btn1').click(function() {
+			alert();
+		});
+
+
+		$('#btn2').on('click', function() {
+			alert();
+		});
+		
+		$('#btn3').click(function() { // 화살표 함수 쓰면 여전히 this > window
+			// 이벤트 주체?
+			// alert(event.target.id); //btn3
+			// alert(this.id); //btn3
+
+			// 전용 / 범용 함수 이벤트 둘 다 제거할 때 off()
+			$('#btn1').off('click'); // 이벤트 제거
+			$('#btn2').off('click'); // 이벤트 제거
+
+		});
+ 		*/
+
+		// 버튼 3개 > 이벤트 추가
+		// 기존 방식
+		// const list = document.querySelectorAll('.btn');
+
+		// for (let i = 0; i < list.length; i++) {
+		// 	list[i].onclick = function() {
+		// 		alert(event.target.value);
+		// 	};
+		// }
+
+		//jQuery
+		$('.btn').click(function() {
+			alert(event.target.value);
+		});
+
+	</script>
+</body>
+</html>
