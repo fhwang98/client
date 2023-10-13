@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Q29_style</title>
+	<style>
+		.box {
+			width: 120px; 
+			height: 120px; 
+			position: absolute;
+			left: 0;
+			top: 0;
+			/* background-image: url(../asset/images/m01.png); */
+			background-repeat: no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<script>
+
+		window.onmousedown = function() {
+
+			if (event.buttons == 1 || event.buttons == 2) {
+
+				const box = document.createElement('div');
+				box.className = 'box';
+				box.style.left = event.clientX - 60 + 'px';
+				box.style.top = event.clientY - 60 + 'px';
+
+				let n = (Math.floor(Math.random() * 10 + 1) + '').padStart(2, '0');
+				box.style.backgroundImage = `url(../asset/images/m${n}.png)`;
+				document.body.appendChild(box);
+
+				let i = 0;
+				if (document.getElementsByClassName('box').length > 10) {
+					document.body.removeChild(document.getElementsByClassName('box')[i]);
+					i++;
+				}
+
+			}
+		};
+
+		window.oncontextmenu = function() {return false;};
+
+	</script>
+</body>
+</html>

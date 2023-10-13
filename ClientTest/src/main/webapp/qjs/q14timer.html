@@ -51,11 +51,17 @@
 		btnstop.onclick = stop;
 
 		function start() {
-			setTimeout(write, 10);
+			if (timer == 0) {
+				timer = setInterval(write, 100);
+			}
 		}
 		function write() {
 			txt1.value = txt2.value.substr(0, n);
 			n++;
+		}
+		function stop() {
+			clearInterval(timer);
+			timer = 0;
 		}
 
 	</script>
