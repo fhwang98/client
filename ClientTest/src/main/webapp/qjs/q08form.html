@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Q08_form</title>
+</head>
+<body>
+	<h1>우편 번호 검색</h1>
+	<form name="form1">
+		<table id="tbl1">
+			<tr>
+				<td>우편번호</td>
+				<td>
+					<input type="text" name="txt1">
+					<input type="button" value="우편번호검사하기" name="btn1">
+				</td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td><input type="text" name="txt2"></td>
+			</tr>
+			<tr>
+				<td>상세주소</td>
+				<td><input type="text" name="txt3"></td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		window.document.form1.btn1.onclick = validPostCode;
+		
+		function validPostCode() {
+			window.open('q08form_child.html', 'child', '');	
+		}
+
+	</script>
+</body>
+</html>
